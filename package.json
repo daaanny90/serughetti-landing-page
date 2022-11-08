@@ -1,0 +1,19 @@
+{
+  "name": "serughetti-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page for Serughetti",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./public/input.css -o ./public/output.css --watch",
+    "build": "npx tailwindcss -i ./public/input.css -o ./public/output.css"
+  },
+  "author": "Danny Spina",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.1"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3"
+  }
+}
