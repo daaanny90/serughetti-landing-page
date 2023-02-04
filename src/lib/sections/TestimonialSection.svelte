@@ -1,0 +1,25 @@
+<script>
+  export let text;
+  export let name;
+</script>
+<section class="overflow-hidden bg-gray-50 py-12 md:py-20 lg:py-24">
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative">
+      <blockquote class="mt-10">
+        <div class="mx-auto max-w-3xl text-center text-xl font-medium leading-9 text-gray-900">
+          <p>&ldquo;{text}&rdquo;</p>
+        </div>
+        <footer class="mt-8">
+          <div class="md:flex md:items-center md:justify-center">
+            <div class="md:flex-shrink-0">
+              <img class="mx-auto h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            </div>
+            <div class="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
+              <div class="text-base font-medium text-gray-900">{name}</div>
+            </div>
+          </div>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
