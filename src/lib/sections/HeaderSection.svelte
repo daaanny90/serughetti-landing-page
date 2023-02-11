@@ -10,8 +10,8 @@
 				<a href="#">
 					<span class="sr-only">1RM Powerlifting</span>
 					<img
-						class="h-8 w-auto sm:h-10"
-						src="https://tailwindui.com/img/logos/mark.svg?from-color=purple&from-shade=600&to-color=indigo&to-shade=600&toShade=600"
+						class="h-3 w-auto sm:h-10"
+						src="./logo.png"
 						alt=""
 					/>
 				</a>
@@ -20,10 +20,9 @@
 
 			</div>
 			<nav class="hidden space-x-10 md:flex">
-				<a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Chi sono</a>
-				<a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">powerlifting</a>
-				<a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Il mio metodo</a
-				>
+			<a href="#why-me" class="text-base text-gray-500 hover:text-gray-900">Perché allenarsi con me</a>
+			<a href="#pricing" class="text-base text-gray-500 hover:text-gray-900">Prezzi</a>
+			<a href="#who-i-am" class="text-base text-gray-500 hover:text-gray-900">Chi sono</a>
 			</nav>
 		</div>
 	</div>

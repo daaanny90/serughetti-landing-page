@@ -13,7 +13,7 @@
 						/>
 					</div>
 					<div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-						<h1 class="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+						<h1 id="hero" class="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
 							<span class="block text-white">Prendi il controllo</span>
 							<span class="block text-indigo-200">sul tuo fisico</span>
 						</h1>
