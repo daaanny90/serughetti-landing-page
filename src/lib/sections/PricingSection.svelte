@@ -1,3 +1,7 @@
+<script>
+  import {contactModal} from "$lib/stores.ts"
+</script>
+
 <div class="mx-auto max-w-7xl bg-white py-24 px-4 sm:px-6 lg:px-8">
   <h2 id="pricing" class="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none lg:text-6xl">Piani di allenamento per ogni esigenza</h2>
   <p class="mt-6 max-w-2xl text-xl text-gray-500">Se vuoi puoi giá scegliere un piano di allenamento. Qualsiasi sia la tua scelta, fisseremo un primo allenamento gratuito per conoscerci. La tua scelta non è in nessun caso vincolante.</p>
@@ -33,7 +37,7 @@
         </ul>
       </div>
 
-      <a href="#" class="bg-indigo-50 text-indigo-700 hover:bg-indigo-100 mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Iniziamo</a>
+      <a href="#" on:click={contactModal.show} class="bg-indigo-50 text-indigo-700 hover:bg-indigo-100 mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Iniziamo</a>
     </div>
 
     <div class="relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
@@ -75,7 +79,7 @@
         </ul>
       </div>
 
-      <a href="#" class="bg-indigo-500 text-white hover:bg-indigo-600 mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Iniziamo</a>
+      <a href="#" on:click={contactModal.show} class="bg-indigo-500 text-white hover:bg-indigo-600 mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Iniziamo</a>
     </div>
 
     <div class="relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
@@ -131,7 +135,7 @@
         </ul>
       </div>
 
-      <a href="#" class="bg-indigo-50 text-indigo-700 hover:bg-indigo-100 mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Iniziamo</a>
+      <a href="#" on:click={contactModal.show} class="bg-indigo-50 text-indigo-700 hover:bg-indigo-100 mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium">Iniziamo</a>
     </div>
   </div>
 
@@ -146,7 +150,7 @@
     <p class="text-xl text-gray-500">Non lasciare che tempo e spazio siano un limite. Con il coaching online puoi raggiungere i tuoi obiettivi da qualsiasi luogo, in qualsiasi momento. Contattami per saperne di più.</p>
     <div class="mt-8 flex justify-center">
       <div class="inline-flex rounded-md shadow">
-        <a href="#" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700">Contattami</a>
+        <a href="#" on:click={contactModal.show} class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700">Contattami</a>
       </div>
     </div>
   </div>

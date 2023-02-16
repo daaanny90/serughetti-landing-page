@@ -1,7 +1,7 @@
 <script>
   import Logo from "$lib/components/Logo.svelte";
   let flyoutOpen = false;
-</script>
+	</script>
 
 <header>
   <div class="relative bg-white">
