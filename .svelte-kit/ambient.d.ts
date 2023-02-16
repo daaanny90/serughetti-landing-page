@@ -27,7 +27,7 @@
  */
 declare module '$env/static/private' {
 	export const NVM_INC: string;
-	export const SSH_AGENT_PID: string;
+	export const SPACESHIP_VERSION: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
@@ -64,6 +64,7 @@ declare module '$env/static/private' {
 	export const __CFBundleIdentifier: string;
 	export const npm_command: string;
 	export const PWD: string;
+	export const DBUS_LAUNCHD_SESSION_BUS_SOCKET: string;
 	export const npm_lifecycle_event: string;
 	export const EDITOR: string;
 	export const npm_package_name: string;
@@ -72,6 +73,7 @@ declare module '$env/static/private' {
 	export const XPC_FLAGS: string;
 	export const npm_config_node_gyp: string;
 	export const npm_package_version: string;
+	export const SPACESHIP_ROOT: string;
 	export const XPC_SERVICE_NAME: string;
 	export const VSCODE_INJECTION: string;
 	export const SHLVL: string;
@@ -121,7 +123,7 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		NVM_INC: string;
-		SSH_AGENT_PID: string;
+		SPACESHIP_VERSION: string;
 		TERM_PROGRAM: string;
 		NODE: string;
 		INIT_CWD: string;
@@ -158,6 +160,7 @@ declare module '$env/dynamic/private' {
 		__CFBundleIdentifier: string;
 		npm_command: string;
 		PWD: string;
+		DBUS_LAUNCHD_SESSION_BUS_SOCKET: string;
 		npm_lifecycle_event: string;
 		EDITOR: string;
 		npm_package_name: string;
@@ -166,6 +169,7 @@ declare module '$env/dynamic/private' {
 		XPC_FLAGS: string;
 		npm_config_node_gyp: string;
 		npm_package_version: string;
+		SPACESHIP_ROOT: string;
 		XPC_SERVICE_NAME: string;
 		VSCODE_INJECTION: string;
 		SHLVL: string;
