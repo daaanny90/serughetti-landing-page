@@ -1,5 +1,5 @@
-<script>
-  import { contactModal } from "$lib/stores.ts";
+<script lang="ts">
+  import { contactModal } from "$lib/stores";
   import Transition from "svelte-class-transition";
 
   let toggle = false;
@@ -7,7 +7,7 @@
   let modal;
   let modalWindow;
   let showClass = "hidden";
-  let modalContent;
+  let modalContent: HTMLElement;
   let chosenPowerlifter = 0;
   let namePlaceholder = "";
   let surnamePlaceholder = "";
@@ -126,6 +126,7 @@
         <div
           class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-12 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm"
         >
+        <form name="contact" netlify>
           <div class="absolute top-0 right-0 pt-4 pr-4 block">
             <button
               type="button"
@@ -161,6 +162,9 @@
               <div
                 class="relative rounded-md rounded-b-none border border-gray-300 px-3 py-2 focus-within:z-10 focus-within:border-indigo-600 focus-within:ring-1 focus-within:ring-indigo-600"
               >
+              
+
+              
                 <label for="name" class="block text-xs font-medium text-gray-900"
                   >Nome</label
                 >
@@ -218,16 +222,17 @@
                 />
               </div>
             </div>
+            
           </div>
           <div class="mt-5 sm:mt-6">
             <button
-              type="button"
-              on:click={sendSuccess}
-              class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
-              >Invia</button
+            type="submit"
+            on:click={sendSuccess}
+            class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
+            >Invia</button
             >
           </div>
-        </div>
+        </form>
       </Transition>
     </div>
   </div>
