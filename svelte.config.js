@@ -8,14 +8,10 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter(),
-		target: '#svelte',
-		prerender: {
-			crawl: true,
-			enabled: true,
-			force: true,
-			pages: ['*'],
-		},
+		adapter: adapter({
+			edge: false,
+			split: false
+	}),
 	}
 };
 
