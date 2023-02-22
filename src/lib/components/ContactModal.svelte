@@ -161,7 +161,7 @@
         >
           <form
             name="contact"
-            method="post" netlify netlify-honeypot="bot-field"
+            method="post" data-netlify="true" netlify-honeypot="bot-field"
             bind:this={contactForm}
           >
             <div class="absolute top-0 right-0 pt-4 pr-4 block">
