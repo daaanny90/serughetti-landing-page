@@ -126,7 +126,7 @@
         <div
           class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-12 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm"
         >
-        <form name="contact" netlify>
+        <form name="contact" method="POST" data-netlify="true">
           <div class="absolute top-0 right-0 pt-4 pr-4 block">
             <button
               type="button"
