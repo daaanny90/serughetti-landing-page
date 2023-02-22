@@ -9,8 +9,12 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			edge: false,
-			split: false
+			prerender: {
+				crawl: true,
+				enabled: true,
+				onError: 'continue',
+				entries: ['*'],
+			},
 	}),
 	}
 };
