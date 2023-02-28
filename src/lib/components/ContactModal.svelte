@@ -1,5 +1,5 @@
 <script context="module">
-	export const prerender = true;
+  export const prerender = true;
 </script>
 
 <script lang="ts">
@@ -17,7 +17,7 @@
   let chosenPowerlifter = 0;
   let namePlaceholder = "";
   let surnamePlaceholder = "";
-  let pointerEvent = "pointer-events-none"
+  let pointerEvent = "pointer-events-none";
   const successText =
     "<strong>Contatti inviati!</strong> Complimenti, questo è il primo passo verso il cambiamento. Ci sentiamo presto per concretizzare il tuo percorso!";
 
@@ -65,8 +65,8 @@
   ];
 
   contactModal.subscribe((value) => {
-    pointerEvent = (!value) ? "pointer-events-none" : ""
-    toggle = value
+    pointerEvent = !value ? "pointer-events-none" : "";
+    toggle = value;
     const i = randomIndex();
     namePlaceholder = bestPowerlifters[i].name;
     surnamePlaceholder = bestPowerlifters[i].surname;
@@ -81,28 +81,26 @@
   }
 
   const handleSubmit = (event: Event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const myForm = event.target as HTMLFormElement;
-  const formData = new FormData(myForm);
+    const myForm = event.target as HTMLFormElement;
+    const formData = new FormData(myForm);
 
-  fetch("/src/form.html", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
+  };
+
+  onMount(() => {
+    setTimeout(() => {
+      contactForm!.addEventListener("submit", handleSubmit);
+
+    }, 2000);
   })
-    .then(() => console.log("Form successfully submitted"))
-    .catch((error) => alert(error));
-};
-
-// onMount(() => {
-//   setTimeout(() => {
-//     contactForm!.addEventListener("submit", handleSubmit);
-    
-//   }, 2000);
-// })
-
-
 </script>
 
 <div
@@ -161,10 +159,12 @@
         >
           <form
             name="contact"
-            method="post" data-netlify="true" netlify-honeypot="bot-field"
+            method="post"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
             bind:this={contactForm}
           >
-          <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="contact" />
             <div class="absolute top-0 right-0 pt-4 pr-4 block">
               <button
                 type="button"
