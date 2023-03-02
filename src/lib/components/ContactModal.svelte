@@ -113,12 +113,11 @@
         telephone: inputTelephone.value
       }),
     })
-      .then(() => console.log("Form successfully submitted", encode({
-        name: inputName.value,
-        surname: inputSurname.value,
-        email: inputEmail.value,
-        telephone: inputTelephone.value
-      })))
+      .then((resp) => {
+        console.log(resp.status)
+        console.log(resp.statusText)
+        console.log("Form successfully submitted")
+      })
       .catch((error) => alert(error));
   };
 
