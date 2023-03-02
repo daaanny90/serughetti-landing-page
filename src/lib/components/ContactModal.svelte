@@ -11,6 +11,12 @@
 
   let modal: HTMLElement;
   let modalWindow;
+
+  let inputName: HTMLInputElement;
+  let inputSurname: HTMLInputElement;
+  let inputEmail: HTMLInputElement;
+  let inputTelephone: HTMLInputElement;
+  
   let showClass = "hidden";
   let modalContent: HTMLElement;
   let contactForm: HTMLFormElement;
@@ -80,20 +86,41 @@
     return Math.floor(Math.random() * bestPowerlifters.length);
   }
 
-  // const handleSubmit = (event: Event) => {
-  //   event.preventDefault();
+  function encode(data: Record<string,string>) {
+  return Object.keys(data)
+    .map(
+      (key) =>
+        encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+    )
+    .join("&");
+}
 
-  //   const myForm = event.target as HTMLFormElement;
-  //   const formData = new FormData(myForm);
+  const handleSubmit = (event: Event) => {
+    event.preventDefault();
 
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: new URLSearchParams(formData).toString(),
-  //   })
-  //     .then(() => console.log("Form successfully submittedtzuitiu"))
-  //     .catch((error) => alert(error));
-  // };
+    // const myForm = event.target as HTMLElement;
+    // const formData = new FormData(myForm.closest('form') as HTMLFormElement);
+
+    // console.log(formData)
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        name: inputName.value,
+        surname: inputSurname.value,
+        email: inputEmail.value,
+        telephone: inputTelephone.value
+      }),
+    })
+      .then(() => console.log("Form successfully submitted", encode({
+        name: inputName.value,
+        surname: inputSurname.value,
+        email: inputEmail.value,
+        telephone: inputTelephone.value
+      })))
+      .catch((error) => alert(error));
+  };
 
   onMount(() => {
     setTimeout(() => {
@@ -211,6 +238,7 @@
                     id="name"
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder={namePlaceholder}
+                    bind:this={inputName}
                   />
                 </div>
                 <div
@@ -225,6 +253,7 @@
                     type="text"
                     name="surname"
                     id="surname"
+                    bind:this={inputSurname}
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder={surnamePlaceholder}
                   />
@@ -240,6 +269,7 @@
                     type="email"
                     name="email"
                     id="email"
+                    bind:this={inputEmail}
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder="{namePlaceholder.toLowerCase()}.{surnamePlaceholder.toLowerCase()}@powerlifting.com"
                   />
@@ -256,6 +286,7 @@
                     type="tel"
                     name="telephone"
                     id="telephone"
+                    bind:this={inputTelephone}
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder="+39 347 45 34 278"
                   />
@@ -265,6 +296,7 @@
             <div class="mt-5 sm:mt-6">
               <button
                 type="submit"
+                on:click={handleSubmit}
                 class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
                 >Invia</button
               >
