@@ -187,6 +187,7 @@
             name="contact"
             method="POST"
             data-netlify="true"
+            action="/thanks.html"
             netlify-honeypot="bot-field"
             bind:this={contactForm}
           >
@@ -295,7 +296,6 @@
             <div class="mt-5 sm:mt-6">
               <button
                 type="submit"
-                on:click={handleSubmit}
                 class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
                 >Invia</button
               >
