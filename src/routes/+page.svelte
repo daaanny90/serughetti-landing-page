@@ -21,7 +21,7 @@
     <HeroSection />
     <TestimonialSection
       text="Grazie a te ottengo  dei risultati mai visti."
-      name="Ylenia Delgado"
+      name="Yenia Delgado"
     />
     <!-- <LogoCloud /> -->
     <WhyChooseMe />
