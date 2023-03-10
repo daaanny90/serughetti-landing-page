@@ -5,27 +5,12 @@
 <script lang="ts">
   import { contactModal } from "$lib/stores";
   import Transition from "svelte-class-transition";
-  import { onMount } from "svelte";
 
   let toggle = false;
 
-  let modal: HTMLElement;
-  let modalWindow;
-
-  let inputName: HTMLInputElement;
-  let inputSurname: HTMLInputElement;
-  let inputEmail: HTMLInputElement;
-  let inputTelephone: HTMLInputElement;
-  
-  let showClass = "hidden";
-  let modalContent: HTMLElement;
-  let contactForm: HTMLFormElement;
-  let chosenPowerlifter = 0;
   let namePlaceholder = "";
   let surnamePlaceholder = "";
   let pointerEvent = "pointer-events-none";
-  const successText =
-    "<strong>Contatti inviati!</strong> Complimenti, questo è il primo passo verso il cambiamento. Ci sentiamo presto per concretizzare il tuo percorso!";
 
   const bestPowerlifters = [
     {
@@ -77,15 +62,11 @@
     if (!toggle) {
       return;
     }
-    
+
     const i = randomIndex();
     namePlaceholder = bestPowerlifters[i].name;
     surnamePlaceholder = bestPowerlifters[i].surname;
   });
-
-  function sendSuccess() {
-    modalContent.innerHTML = successText;
-  }
 
   function randomIndex() {
     return Math.floor(Math.random() * bestPowerlifters.length);
@@ -99,58 +80,14 @@
     )
     .join("&");
 }
-
-  const handleSubmit = (event: Event) => {
-    event.preventDefault();
-
-    // const myForm = event.target as HTMLElement;
-    // const formData = new FormData(myForm.closest('form') as HTMLFormElement);
-
-    // console.log(formData)
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        name: inputName.value,
-        surname: inputSurname.value,
-        email: inputEmail.value,
-        telephone: inputTelephone.value
-      }),
-    })
-      .then((resp) => {
-        console.log(resp.status)
-        console.log(resp.statusText)
-        console.log("Form successfully submitted")
-      })
-      .catch((error) => alert(error));
-  };
-
-  onMount(() => {
-    setTimeout(() => {
-      // contactForm!.addEventListener("submit", handleSubmit);
-
-    }, 2000);
-  })
 </script>
 
 <div
   class="block"
-  bind:this={modal}
   aria-labelledby="modal-title"
   role="dialog"
   aria-modal="true"
 >
-  <!--
-    Background backdrop, show/hide based on modal state.
-
-    Entering: "ease-out duration-300"
-      From: "opacity-0"
-      To: "opacity-100"
-    Leaving: "ease-in duration-200"
-      From: "opacity-100"
-      To: "opacity-0"
-  -->
   <Transition
     {toggle}
     inTransition="ease-out duration-300"
@@ -162,22 +99,11 @@
   </Transition>
 
   <div
-    bind:this={modalWindow}
     class="fixed {pointerEvent} inset-0 overflow-y-auto"
   >
     <div
       class="flex min-h-full items-center justify-center p-4 text-center sm:p-0"
     >
-      <!--
-        Modal panel, show/hide based on modal state.
-
-        Entering: "ease-out duration-300"
-          From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          To: "opacity-100 translate-y-0 sm:scale-100"
-        Leaving: "ease-in duration-200"
-          From: "opacity-100 translate-y-0 sm:scale-100"
-          To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-      -->
       <Transition
         {toggle}
         inTransition="ease-out duration-300"
@@ -194,7 +120,6 @@
             data-netlify="true"
             action="/thanks.html"
             netlify-honeypot="bot-field"
-            bind:this={contactForm}
           >
             <input type="hidden" name="form-name" value="contact" />
             <div class="absolute top-0 right-0 pt-4 pr-4 block">
@@ -204,7 +129,6 @@
                 class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 <span class="sr-only">Close</span>
-                <!-- Heroicon name: outline/x-mark -->
                 <svg
                   class="h-6 w-6"
                   xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +146,7 @@
                 </svg>
               </button>
             </div>
-            <div bind:this={modalContent}>
+            <div>
               <p class="mb-5 text-gray-700">
                 Lasciami i tuoi contatti, ti contatterò io per fissare una
                 seduta gratutita e per discutere dei tuoi desideri, necessità e
@@ -243,7 +167,6 @@
                     id="name"
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder={namePlaceholder}
-                    bind:this={inputName}
                   />
                 </div>
                 <div
@@ -258,7 +181,6 @@
                     type="text"
                     name="surname"
                     id="surname"
-                    bind:this={inputSurname}
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder={surnamePlaceholder}
                   />
@@ -274,7 +196,6 @@
                     type="email"
                     name="email"
                     id="email"
-                    bind:this={inputEmail}
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder="{namePlaceholder.toLowerCase()}.{surnamePlaceholder.toLowerCase()}@powerlifting.com"
                   />
@@ -291,7 +212,6 @@
                     type="tel"
                     name="telephone"
                     id="telephone"
-                    bind:this={inputTelephone}
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder="+39 347 45 34 278"
                   />
