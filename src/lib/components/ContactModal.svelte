@@ -73,6 +73,11 @@
   contactModal.subscribe((value) => {
     pointerEvent = !value ? "pointer-events-none" : "";
     toggle = value;
+
+    if (!toggle) {
+      return;
+    }
+    
     const i = randomIndex();
     namePlaceholder = bestPowerlifters[i].name;
     surnamePlaceholder = bestPowerlifters[i].surname;
