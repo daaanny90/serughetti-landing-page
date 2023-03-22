@@ -192,7 +192,7 @@
       <figure>
         <img
           class="w-full lifting rounded-lg"
-          src="./lifting.png"
+          src="./lifting.webp"
           alt=""
         />
       </figure>

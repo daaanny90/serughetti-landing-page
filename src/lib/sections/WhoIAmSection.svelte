@@ -64,7 +64,7 @@
             <div class="aspect-w-3 aspect-h-2">
               <img
                 class="rounded-lg object-cover shadow-lg"
-                src="./emanuele_serughetti.png"
+                src="./emanuele_serughetti.webp"
                 alt=""
               />
             </div>
