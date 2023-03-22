@@ -2,10 +2,6 @@
   import "../app.css";
   import HeaderSection from "$lib/sections/HeaderSection.svelte";
   import HeroSection from "$lib/sections/HeroSection.svelte";
-  import LogoCloud from "$lib/sections/LogoCloud.svelte";
-  import AlternatingFeatureSection from "$lib/sections/AlternatingFeatureSection.svelte";
-  import GradientFeatureSection from "$lib/sections/GradientFeatureSection.svelte";
-  import StatSection from "$lib/sections/StatSection.svelte";
   import CtaSection from "$lib/sections/CtaSection.svelte";
   import FooterSection from "$lib/sections/FooterSection.svelte";
   import WhyChooseMe from "$lib/sections/WhyChooseMe.svelte";
@@ -23,10 +19,8 @@
       text="Grazie a te ottengo  dei risultati mai visti."
       name="Yenia Delgado"
     />
-    <!-- <LogoCloud /> -->
     <WhyChooseMe />
     <CtaSection />
-    <!-- <AlternatingFeatureSection /> -->
     <TestimonialSection
       text="Onesto, sincero, professionale, schietto, chiaro, sempre aperto all'ascolto e al confronto. Una persona che ama il suo lavoro e ci mette impegno, passione e dedizione. Motiva i suoi atleti a dare sempre il massimo.
 Ho appena iniziato il percorso con Ema e fin da subito mi ha spiegato tutto in modo molto chiaro, ascoltando prima quelle che erano le mie esigenze e i miei desideri. Dopo qualche allenamento e tante correzioni da parte sua, ho subito notato di essere più padrona dei miei movimenti e che l'esecuzione di certi esercizi mi veniva meglio, più fluida."

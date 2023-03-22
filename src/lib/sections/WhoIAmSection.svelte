@@ -78,7 +78,7 @@
               </div>
               <ul role="list" class="flex space-x-5">
                 <li>
-                  <a href="https://www.instagram.com/serughetti_emanuele_pl" class="text-gray-400 hover:text-gray-500">
+                  <button href="https://www.instagram.com/serughetti_emanuele_pl" class="text-gray-400 hover:text-gray-500">
                     <span class="sr-only">Instagram</span>
                     <svg
                       class="h-6 w-6"
@@ -92,7 +92,7 @@
                         clip-rule="evenodd"
                       />
                     </svg>
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>

@@ -9,12 +9,12 @@
       class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8"
     >
       <div class="flex justify-start lg:w-0 lg:flex-1">
-        <a >
+        <button>
           <span class="sr-only">ES Powerlifting</span>
           <div class="flex justify-center items-center">
             <Logo />
           </div>
-        </a>
+        </button>
       </div>
       <div class="-my-2 -mr-2 md:hidden" />
       <nav class="hidden space-x-10 md:flex">

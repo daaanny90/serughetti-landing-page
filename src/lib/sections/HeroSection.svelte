@@ -38,11 +38,11 @@
           <div
             class="space-y-4 sm:mx-auto sm:inline-grid sm:gap-5 sm:space-y-0"
           >
-            <a
+            <button
               
               class="flex items-center cursor-pointer justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-indigo-700 shadow-sm hover:bg-indigo-50 sm:px-8"
 							on:click={contactModal.show}
-							>Fissa una seduta gratuita</a
+							>Fissa una seduta gratuita</button
             >
           </div>
         </div>
