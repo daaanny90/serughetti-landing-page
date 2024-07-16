@@ -108,7 +108,9 @@
   <div class="relative px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-prose text-lg">
       <h1>
-        <span id="why-me" class="block text-center text-lg font-semibold text-indigo-600"
+        <span
+          id="why-me"
+          class="block text-center text-lg font-semibold text-indigo-600"
           >Perché allenarsi con me</span
         >
         <span
@@ -191,9 +193,9 @@
       a raggiungere i loro obiettivi di salute e fitness in modo sicuro ed efficace.
       <figure>
         <img
-          class="w-full lifting rounded-lg"
-          src="./lifting.webp"
-          alt=""
+          class="lifting w-full h-[32rem] object-none rounded-lg"
+          src="./emanuele_serughetti_power_lifting.webp"
+          alt="Emanuele Serughetti Power Lifting 1RM"
         />
       </figure>
     </div>
@@ -202,8 +204,7 @@
 
 <style>
   .lifting {
-    height: 20rem;
-    object-fit: cover;
-    object-position: 0px 40%;
+    object-position: 50% 40%;
   }
 </style>
+
